@@ -1,0 +1,185 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="simplegrid.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/plugins/line-numbers/prism-line-numbers.min.css" />
+<script src="https://use.fontawesome.com/b78867e3c9.js"></script>
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+  <style>
+  	body {
+  		font-family: 'Inconsolata', monospace;
+  	}
+  	.content {
+  		padding: 5px;
+  		margin-top: 10px;
+  	}
+
+  	.button {
+  		padding: 5px;
+  		margin-top: 10px;
+  	}
+  	.button:hover {
+  		background: #000;
+  		color: #fff;
+  	}
+
+  	.center {
+  		text-align: center;
+  		text-decoration: bold;
+  	}
+  	.marks {
+  		font-size: 18px;
+  	}
+
+  	.marks input {
+  		font-size: 18px;
+  	}
+
+  	.row {
+  		display: flex;
+  	}
+
+  	.row div:first-child {
+  		flex: 1;
+  	}
+
+  	.marks-input {
+  		width: 60px;
+  	}
+
+  	.students {
+  		list-style: none;
+  		padding: 0;
+  	}
+
+  	.content h3 {
+  		margin-top: 5px;
+  	}
+
+	.caret {
+	  position: relative;
+	  display: inline-block;
+	  top:-6px;
+	  width: 12px;
+	  left: 3px;
+	}
+
+	.caret:before {
+	  content: '';
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  border-top: 5px solid #000000;
+	  border-left: 5px solid transparent;
+	  border-right: 5px solid transparent;
+	}
+
+	.caret:after {
+	  content: '';
+	  position: absolute;
+	  left: 1px;
+	  top: 0;
+	  border-top: 4px solid #000000;
+	  border-left: 4px solid transparent;
+	  border-right: 4px solid transparent;
+	}
+
+
+  </style>
+</head>
+
+<body>
+	<div class="grid grid-pad">
+		<div class="col-1-1">
+			<div  style="display:flex;flex-direction: row;">
+			<div class="button" style="border: 1px solid black; margin-right: 10px">
+				Select Course&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i>
+			</div>
+			<div class="button" style="border: 1px solid black; margin-right: 10px">
+				Select Assignment&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i>
+			</div>
+			<div class="button" style="border: 1px solid black">
+				Select Group&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i>
+			</div>
+			</div>
+		</div>
+	    <div class="col-9-12" >
+	       <div class="content" style="border: 1px solid black">
+	           	<h3>Code View</h3>
+	           	<pre class="line-numbers language-python"><code class="language-python"># indent your Python code to put into an email
+import glob
+# glob supports Unix style pathname extensions
+python_files = glob.glob('*.py')
+for file_name in sorted(python_files):</code></pre>
+	           	<div style="border: 1px solid black;padding: 5px" contenteditable>
+	           	You could do this differently.
+	           	</div>
+	           		<pre class="line-numbers language-python" data-start="6"><code class="language-python">print '    ------' + file_name
+
+    with open(file_name) as f:
+        for line in f:
+            print '    ' + line.rstrip()
+
+    print
+	           	</code></pre>
+	       	</div>
+	    </div>
+	    <div class="col-3-12">
+	    	<div class="content" style="border: 1px solid black">
+		    	<div class="center">
+		           <h3>Markers Assessment</h3>
+		        </div>
+		        <div class="marks">
+		        	<div class="row">
+		        		<div>Style</div><div class="marks-input"><input size="2"/>/15</div>
+		        	</div>
+		        	<div class="row">
+		        		<div>Test Scripts</div><div class="marks-input"><input size="2"/>/5</div>
+		        	</div>
+		       	</div>
+	       </div>
+	       <div class="content" style="border: 1px solid black">
+	           	<div class="center">
+		           <h3>Student Selection</h3>
+		        </div>
+		        <ul class="students">
+		        	<li>
+			        	<a href="#" class="row">
+			        		<div>
+			        			Wiseheart, John
+			        		</div>
+			        		<div>
+			        			90
+			        		</div>
+		        		</a>
+		        	</li>
+		        	<li>
+			        	<a href="#" class="row">
+			        		<div>
+			        			Wiseheart, John
+			        		</div>
+			        		<div>
+			        			89
+			        		</div>
+		        		</a>
+		        	</li>
+		        </ul>
+	       </div>
+	    </div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/prism.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-python.min.js"></script>
+
+</body>
+</html>
